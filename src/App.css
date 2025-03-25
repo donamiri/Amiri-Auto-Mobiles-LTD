@@ -1,0 +1,177 @@
+.App {
+  text-align: center;
+  background-color: #f5f5f568; /* A light gray color */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.tinos-regular {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tinos-bold {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tinos-regular-italic {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.tinos-bold-italic {
+  font-family: "Tinos", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.carousel-container img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color:black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  height: 220px;
+  font-style: italic;
+  
+}
+
+.Links .Link1{
+  display:inline-flexbox;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+   color: #f0a500;
+   margin-right: 15px;
+}
+.Links .Link2{
+  display:inline-flexbox;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+   color: #f0a500;
+   margin-right: 15px;
+}
+.Links .Link3{
+  display:inline-flexbox;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+   color: #f0a500;
+   margin-right: 15px;
+}
+.Links .Link4{
+  display:inline-flexbox;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+   color: #f0a500;
+   margin-right: 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: left;
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  margin-right:auto;
+  margin-left: 2%;
+  
+ 
+}
+
+.logo {
+  width: 75px; /* Adjust the size of the logo */
+  height: auto; /* Keep the aspect ratio */
+ transform: scale(1.1); /* Scales the image slightly */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.card {
+  width: 250px; /* Set a fixed width */
+  height: 300px; /* Set a fixed height */
+  display: flex; /* For layout control */
+  justify-content: center; /* Center content horizontally */
+  border: 1px solid #ccc; /* Optional border */
+  box-sizing: border-box; /* Include padding and border in total size */
+}
+
+.card img {
+  width: 100%; /* Scale image to fit */
+  height: 200px; /* Ensure it doesn't overflow */
+  object-fit: cover; /* Crop image to fit */
+  object-position: center;
+}
+.card .content{
+  padding: 16px;
+  flex-grow: 1;
+  object-position: center;
+}
+.card-body p {
+  font-size: 1em;
+  height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  object-position: center;
+
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .menu {
+    display: block; /* Show mobile menu */
+  }
+}
+
+
+
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

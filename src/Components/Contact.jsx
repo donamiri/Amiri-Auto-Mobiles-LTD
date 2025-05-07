@@ -39,12 +39,12 @@ const Contact= () => {
           <h4 className="text-center text-light bg-dark p-2">Stay Connected</h4>
           <div className="d-flex justify-content-center gap-3 mt-3">
             <a
-              href="https://instagram.com/don_mikeamiri"
+              href="https://www.linkedin.com/in/michael-ngamau-ab2b17362/"
               target="_blank"
               rel="noreferrer"
               className="text-dark fs-4"
             >
-              <i className="bi bi-instagram"></i>
+              <i class="bi bi-linkedin"></i>
             </a>
             <a
               href="https://github.com/donamiri"

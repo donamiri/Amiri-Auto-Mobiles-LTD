@@ -4,10 +4,13 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import image from "../images/porsche.jpg"
-import img from "../images/m5 (1) (1).jpg"
-import pic from "../images/amg.png"
+import image from "../images/porsche.jpg";
+import img from "../images/m5 (1) (1).jpg";
+import pic from "../images/amg.png";
+import { useCart } from "../contexts/CartContext";
 
+
+// Custom Arrows for Carousel
 const CustomPrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (
@@ -18,11 +21,11 @@ const CustomPrevArrow = (props) => {
         display: "block",
         background: "gray",
         borderRadius: "50%",
-        position: "absolute", // Ensure absolute positioning
-        top: "50%", // Vertically center the arrow
-        left: "10px", // Move closer to the left edge of the image
-        transform: "translateY(-50%)", // Center alignment
-        zIndex: 1, // Bring the arrow above the image
+        position: "absolute",
+        top: "50%",
+        left: "10px",
+        transform: "translateY(-50%)",
+        zIndex: 1,
       }}
       onClick={onClick}
     />
@@ -39,17 +42,16 @@ const CustomNextArrow = (props) => {
         display: "block",
         background: "gray",
         borderRadius: "50%",
-        position: "absolute", // Ensure absolute positioning
-        top: "50%", // Vertically center the arrow
-        right: "10px", // Move closer to the right edge of the image
-        transform: "translateY(-50%)", // Center alignment
-        zIndex: 1, // Bring the arrow above the image
+        position: "absolute",
+        top: "50%",
+        right: "10px",
+        transform: "translateY(-50%)",
+        zIndex: 1,
       }}
       onClick={onClick}
     />
   );
 };
-
 
 const Getproduct = () => {
   const [products, setProducts] = useState([]);
@@ -58,6 +60,17 @@ const Getproduct = () => {
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
   const navigate = useNavigate();
+
+
+const handleAddToCart = (product) => {
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert(`${product.product_name} has been added to your cart.`);
+};
 
   const getProducts = async () => {
     setLoading("connecting...");
@@ -126,11 +139,10 @@ const Getproduct = () => {
         </div>
       </Slider>
 
-      {loading}
-      {error}
+      {loading && <p>{loading}</p>}
+      {error && <p>{error}</p>}
 
-     
-     
+      {/* Product Cards */}
       {filteredProducts.map((product, index) => (
         <div className="col-md-3 col-lg-3 mb-4" key={index}>
           <div className="card shadow p-2">
@@ -150,6 +162,12 @@ const Getproduct = () => {
                 }}
               >
                 Show details
+              </button>
+              <button
+                className="btn btn-outline-primary w-100 mt-2"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
               </button>
             </div>
           </div>
